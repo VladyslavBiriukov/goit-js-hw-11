@@ -1,0 +1,220 @@
+
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+            Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: gainsboro;
+
+    overflow: auto;
+    background: linear-gradient(315deg,
+                    rgb(238, 255, 0) 3%,
+                    rgba(0, 81, 255, 0.7) 38%,
+                    rgb(48, 80, 238) 68%,
+                    rgba(253, 253, 21, 0.842) 98%);
+    background-size: 400% 400%;
+    background-attachment: fixed;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    50% {
+        background-position: 100% 100%;
+    }
+
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+
+a {
+    text-decoration: none;
+}
+
+p {
+    margin: 0;
+}
+
+.search-container {
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 100px;
+    background-color: #3f57b3;
+    box-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 1px rgb(0 0 0 / 14%), 0 2px 1px rgb(0 0 0 / 20%);
+}
+
+.search-form {
+    position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px 0 20px 0;
+    
+        overflow: auto;
+        background: linear-gradient(315deg,
+                rgb(255, 153, 0) 3%,
+                rgba(60, 132, 206, 1) 38%,
+                rgb(48, 175, 238) 68%,
+                rgb(255, 236, 25) 98%);
+        animation: gradient 15s ease infinite;
+        background-size: 400% 400%;
+        background-attachment: fixed;
+}
+
+.search-form__logo {
+    margin-right: 50px;
+}
+
+.search-form input {
+    width: 300px;
+        height: 30px;
+        padding: 5px 5px 5px 15px;
+        font-size: 16px;
+        outline: none;
+        border: none;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+}
+
+.search-form::placeholder {
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.295);
+}
+
+.search-form button {
+    display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 140px;
+        height: 30px;
+        font-size: 16px;
+        font-weight: 600;
+        border: none;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+    
+        cursor: pointer;
+}
+
+.search-form button:hover,
+.search-form button:focus {
+    background-color: rgb(255, 128, 0);
+    transition: all 0.3s;
+}
+
+.gallery-container {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 25px;
+}
+
+.gallery,
+.info {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.gallery {
+    margin-left: -20px;
+    padding-top: 60px;
+    justify-content: center;
+}
+
+.gallery__link {
+    margin-top: 20px;
+    margin-left: 20px;
+    min-width: 320px;
+    flex-basis: calc((100% - 80px) / 4);
+    border: 2px solid rgb(255, 128, 0);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s;
+}
+
+.gallery__link:hover,
+.gallery__link:focus {
+    box-shadow: 0px 0px 10px 5px rgba(255, 255, 255, 0.5);
+}
+
+.gallery-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.gallery-item__img {
+    height: 200px;
+        width: 100%;
+        object-fit: cover;
+        overflow: hidden;
+}
+
+.info {
+    padding: 10px;
+    justify-content: space-around;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: black;
+}
+
+.info-item:not(:first-child) {
+    margin-left: 5px;
+}
+
+.btn-load-more.is-hidden {
+    display: none;
+}
+
+.btn-load-more {
+    display: block;
+    margin: 25px auto 0 auto;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #3f57b3;
+    box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 2px 6px 2px rgb(60 64 67 / 15%);
+    font: inherit;
+    color: white;
+    cursor: pointer;
+}
+
+.btn-to-top {
+    position: fixed;
+    bottom: 3vh;
+    right: 1vw;
+    z-index: 1000;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #3f57b3;
+    box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 2px 6px 2px rgb(60 64 67 / 15%);
+    color: white;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.btn-to-top--visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.btn-load-more:hover,
+.btn-to-top:hover {
+    background-color: rgb(255, 128, 0);
+    transition: all 0.3s;
+}
