@@ -1,7 +1,6 @@
 export { renderGallery }
 
-const gallery = document.querySelector('.gallery')
-const galleryEl = document.querySelector('.gallery .a')
+const gallery = document.querySelector('.gallery');
 
 function renderGallery(images) {
   const markup = images
