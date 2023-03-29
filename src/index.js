@@ -90,7 +90,6 @@ async function onSearchForm(e) {
 
   try {
     const { data } = await fetchImages(query, page, perPage);
-    // console.log(data.totalHits);
     if (data.totalHits === 0) {
       alertNoImagesFound();
     } else {
@@ -117,7 +116,6 @@ async function onLoadMoreBtn() {
     simpleLightBox = new SimpleLightbox('.gallery a').refresh();
 
     const totalPages = Math.ceil(data.totalHits / perPage);
-    console.log(totalPages);
 
     if (page >= totalPages) {
       loadMoreBtn.classList.add('is-hidden');
